@@ -58,3 +58,4 @@ Thumbs.db
 *.temp
 
 CMakeUserPresets.json
+vcpkg-configuration.json

@@ -9,6 +9,7 @@
         {
             "name": "vcpkg-base",
             "hidden": true,
+            "generator": "Ninja",
             "cacheVariables": {
                 "CMAKE_TOOLCHAIN_FILE": {
                     "type": "FILEPATH",
