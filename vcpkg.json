@@ -1,0 +1,13 @@
+{
+    "name": "sterm",
+    "version": "0.1.0",
+    "description": "Simple Terminal - A coroutine-based terminal application",
+    "homepage": "",
+    "license": "MIT",
+    "dependencies": [
+        {
+            "name": "boost-cobalt",
+            "version>=": "1.84.0"
+        }
+    ]
+}
