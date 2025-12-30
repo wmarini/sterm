@@ -52,6 +52,37 @@ cmake --build --preset system-release
 cmake --install build/release --prefix /usr/local
 ```
 
+### Building a DEB Package
+
+To create a `.deb` package for Debian/Ubuntu systems:
+
+```bash
+# Configure release build
+cmake --preset system-release
+
+# Build the project
+cmake --build --preset system-release
+
+# Generate the DEB package
+cd build/system-release
+cpack -G DEB
+```
+
+The package will be created in the `packages/` directory with the naming format:
+`sterm_<version>_<arch>.deb`
+
+To install the generated package:
+
+```bash
+sudo dpkg -i packages/sterm_0.1.0_amd64.deb
+```
+
+To uninstall:
+
+```bash
+sudo dpkg -r sterm
+```
+
 ## Configuration
 
 Create the configuration file at `~/.config/sterm/config`:

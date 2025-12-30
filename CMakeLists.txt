@@ -63,3 +63,31 @@ if(BUILD_TESTS)
     enable_testing()
     add_subdirectory(tests)
 endif()
+
+# =============================================================================
+# CPack configuration for package generation
+# =============================================================================
+
+set(CPACK_PACKAGE_NAME ${PROJECT_NAME})
+set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${PROJECT_DESCRIPTION}")
+set(CPACK_PACKAGE_DESCRIPTION "A coroutine-based terminal application written in C++23 using Boost.Cobalt. Features asynchronous command execution, thread-safe output handling, and command history support.")
+set(CPACK_PACKAGE_VENDOR "sterm")
+set(CPACK_PACKAGE_CONTACT "maintainer@example.com")
+set(CPACK_PACKAGE_HOMEPAGE_URL "https://github.com/YOUR_USERNAME/sterm")
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/LICENSE")
+set(CPACK_RESOURCE_FILE_README "${CMAKE_SOURCE_DIR}/README.md")
+
+# DEB package specific settings
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Your Name <maintainer@example.com>")
+set(CPACK_DEBIAN_PACKAGE_SECTION "utils")
+set(CPACK_DEBIAN_PACKAGE_PRIORITY "optional")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "libboost-all-dev (>= 1.84)")
+set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
+set(CPACK_DEBIAN_FILE_NAME DEB-DEFAULT)
+
+# Package output directory
+set(CPACK_PACKAGE_DIRECTORY "${CMAKE_SOURCE_DIR}/packages")
+
+# Include CPack module
+include(CPack)

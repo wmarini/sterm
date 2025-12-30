@@ -3,6 +3,7 @@ build/
 bin/
 lib/
 out/
+packages/
 
 # CMake generated files
 CMakeCache.txt
